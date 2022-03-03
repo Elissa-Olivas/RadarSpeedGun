@@ -1,9 +1,9 @@
 package com.company;
 
 public class Car extends MotorPowered implements Mover {
-    public String make;
-    public String model;
-    public int speed;
+    private String make;
+    private String model;
+    private int speed;
 
     public Car (boolean hasMotor, String make, String model, int speed) {
         super(hasMotor);
