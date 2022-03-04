@@ -4,16 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RadarSpeedGun {
-    private int speed;
     private int totalSpeed;
 
-    List<String> movingItems = new ArrayList<String>();
-
-    public void setMovingItems() {
-
-        for (int i = 0; i < movingItems.size(); i++) {
-            System.out.println(movingItems.get(i) + " are now moving at " + speed);
-            totalSpeed += speed;
-        }
+    public RadarSpeedGun(int totalSpeed) {
+        totalSpeed = 0;
     }
+
+    public int getTotalSpeed() {
+        return totalSpeed;
+    }
+
+    List<Mover> movingItems = new ArrayList<Mover>();
+
+    public void movingItems(Mover mover) {
+        totalSpeed = totalSpeed + mover.move();
+        movingItems.add(mover);
+        }
+
 }
